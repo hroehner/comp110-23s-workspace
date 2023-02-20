@@ -1,4 +1,4 @@
-"""EX02 - One Shot Wordle - Loops"""
+"""EX02 - One Shot Wordle - Loops."""
 
 __author__ = "730472095"
 
@@ -14,13 +14,13 @@ emoji: str = ""
 exists: bool = False
 alternate_idx: int = 0
 
-if len(guess) != len(SECRET):
+while len(guess) != len(SECRET):
     guess = input("That was not 6 letters! Try again: ")
-while idx < len(SECRET): #finding to see if index matches
-    if SECRET[idx] == guess[idx]: #if the index and character match
+while idx < len(SECRET):  # finding to see if index matches
+    if SECRET[idx] == guess[idx]: 
         emoji = emoji + GREEN_BOX
     if SECRET[idx] != guess[idx]: 
-        while alternate_idx < len(SECRET):#letter in guess not same index
+        while alternate_idx < len(SECRET):  # letter in guess not same index
             if SECRET[alternate_idx] == guess[idx]:
                 exists = True
             alternate_idx = alternate_idx + 1
@@ -28,7 +28,7 @@ while idx < len(SECRET): #finding to see if index matches
             emoji = emoji + YELLOW_BOX
         else: 
             emoji = emoji + WHITE_BOX
-    exists = False #add this line to make sure it stops. 
+    exists = False  # add this line to make sure it stops
     alternate_idx = 0
     idx = idx + 1
 print(emoji)
