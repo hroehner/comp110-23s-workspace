@@ -17,7 +17,6 @@ def main() -> None:
         turns = turns + 1
     if guess != SECRET and win == False: 
         print("X/6 - Sorry, try again tomorrow! ")
-        exit ()
 
 def contains_char(word: str, character: str) -> bool: 
     """Finding to see if character is found in index of word."""
