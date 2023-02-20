@@ -13,10 +13,11 @@ def main() -> None:
         print(emojified(guess , SECRET))
         if guess == SECRET: 
             print(f"You won in {turns}/6 turns!") 
-            exit()
+            return
         turns = turns + 1
     if guess != SECRET and win == False: 
         print("X/6 - Sorry, try again tomorrow! ")
+        return
 
 def contains_char(word: str, character: str) -> bool: 
     """Finding to see if character is found in index of word."""
