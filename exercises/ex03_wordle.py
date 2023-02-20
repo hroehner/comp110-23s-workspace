@@ -58,6 +58,7 @@ def input_guess(length: int) -> str:
             return attempt  # return the correct length word 
     while len(attempt) == length: 
         return attempt
+    return attempt 
    
 if __name__ == "__main__":  # run to use as a module and makes it possible for toher pmodules to import functions and reuse them
     main()
