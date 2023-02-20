@@ -11,7 +11,7 @@ def main() -> None:
         print(f"=== Turn {turns}/6 ===")
         guess: str = input_guess(5)  # asks for a "5" character word 
         print(emojified(guess , SECRET))
-        if guess == SECRET and win == True:
+        if guess == SECRET: 
             print(f"You won in {turns}/6 turns!") 
             exit()
         turns = turns + 1
