@@ -11,12 +11,13 @@ def main() -> None:
         print(f"=== Turn {turns}/6 ===")
         guess: str = input_guess(5)  # asks for a "5" character word 
         print(emojified(guess , SECRET))
-        if guess == SECRET:
+        if guess == SECRET and win == True:
             print(f"You won in {turns}/6 turns!") 
             exit()
         turns = turns + 1
     if guess != SECRET and win == False: 
         print("X/6 - Sorry, try again tomorrow! ")
+        exit ()
 
 def contains_char(word: str, character: str) -> bool: 
     """Finding to see if character is found in index of word."""
