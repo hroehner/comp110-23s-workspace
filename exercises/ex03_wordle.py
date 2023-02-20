@@ -1,6 +1,6 @@
 """EX03 - Structured Wordle!"""
 
-__author__ = 730472095
+__author__ = "730472095"
 
 def main() -> None: 
     """The entrypoint of the program and main game loop."""
@@ -13,7 +13,7 @@ def main() -> None:
         print(emojified(guess , SECRET))
         if guess == SECRET:
             print(f"You won in {turns}/6 turns!") 
-            quit()
+            exit()
         turns = turns + 1
     if guess != SECRET and win == False: 
         print("X/6 - Sorry, try again tomorrow! ")
