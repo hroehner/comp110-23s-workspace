@@ -33,6 +33,8 @@ def max(input: list[int]) -> int:
 def is_equal(y: list[int], z: list[int]) -> bool: 
     """Determining if the ints in one list, match the ints in another."""
     idx: int = 0 
+    if len(y) == 0 and len(z) == 0: 
+        return True
     if len(y) == 0 or len(z) == 0:
         return False 
     if len(y) != len(z): 
