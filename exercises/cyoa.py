@@ -5,7 +5,7 @@ __author__ = "730472095"
 import random 
 
 points: int = 0
-player: str = ()
+player: str = ""
 SMILE: str = "\U0001F600"
 HEART_EYES: str = "\U0001F60D"
 
@@ -18,7 +18,7 @@ def main() -> None:
     while choice != "3": 
         if choice == "1": 
             guess: int = int(input("Guess a number between 1 and 5: "))
-            answer = random.randint(1,5)
+            answer = random.randint(1, 5)
             points = guess_the_number(guess, answer)
             print(f"You have {points} points! ")
         elif choice == "2":
@@ -29,7 +29,7 @@ def main() -> None:
         return 
     
 
-def guess_the_number(guess:int, answer:int) -> int: 
+def guess_the_number(guess: int, answer: int) -> int:  
     """Guess the number starting with 5 points and losing one with each incorrect guess!"""
     points: int = 0
     playing: bool = True
@@ -39,24 +39,24 @@ def guess_the_number(guess:int, answer:int) -> int:
             playing = False
             points += 1
         else: 
-            guess: int = int(input("Not quite. Guess again: "))
-            ## print("Wrong guess. Try again! ")
+            guess = int(input("Not quite. Guess again: "))
+            # print("Wrong guess. Try again! ")
             points -= 1 
     return points
 
 
 def two_in_a_row_game() -> None: 
-    """Choose a number between 1 and 2 and try and guess twice in a row correctly"""
+    """Choose a number between 1 and 2 and try and guess twice in a row correctly."""
     points = 0 
-    shuffle = random.randint(1,2)
+    shuffle = random.randint(1, 2)
     while points < 2:
-        guess: str = int(input(f"Hello {player}, to win you must guess 2 consecutive times correctly. Choose a number between 1 and 2. "))
-        shuffle = random.randint(1,2)
+        guess: int = int(input(f"Hello {player}, to win you must guess 2 consecutive times correctly. Choose a number between 1 and 2. "))
+        shuffle = random.randint(1, 2)
         if guess == shuffle: 
             print(f"Right! The random number was {shuffle}. ")
             points += 1 
-            print (f"You now have {points} points.")
-            shuffle = random.randint(1,2)
+            print(f"You now have {points} points.")
+            shuffle = random.randint(1, 2)
         else: 
             points = 0 
             print(f"Not quite. The number was {shuffle}. You are back to {points} points.")
@@ -64,10 +64,10 @@ def two_in_a_row_game() -> None:
 
 
 def greet() -> None:
-        """Welcome statement!"""
-        print("Hello! Welcome to Guess that Number! ")
-        global player
-        player = input("What is your name? ")
+    """Welcome statement!"""
+    print("Hello! Welcome to Guess that Number! ")
+    global player
+    player = input("What is your name? ")
      
 
 if __name__ == "__main__": 
